@@ -3,9 +3,10 @@ package ru.vsu.sc.uliyanov_n_s;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        printSomething();
+        printFirstPhrase();
 
         int n = readNumber();
         int sum = findSumOfEvenNumbersOfFibonacci(n - 1);
@@ -13,7 +14,7 @@ public class Main {
         printResult(n, sum);
     }
 
-    public static int findSumOfEvenNumbersOfFibonacci(int n) {
+    static int findSumOfEvenNumbersOfFibonacci(int n) {
         int a = 0;
         int b = 1;
         int sum = 0;
@@ -29,7 +30,7 @@ public class Main {
         return sum;
     }
 
-    public static int readNumber() {
+    static int readNumber() {
         Scanner scanner = new Scanner(System.in);
         int n;
 
@@ -37,23 +38,23 @@ public class Main {
             n = scanner.nextInt();
 
             if (n <= 0) {
-                System.out.println("Invalid value! Try again.");
+                System.out.println("Invalid value! Number can't be negative. Try again.");
                 return readNumber();
             }
 
         } else {
-            System.out.println("Invalid value! Try again.");
+            System.out.println("Invalid value! You need to enter a INTEGER NUMBER. Try again.");
             return readNumber();
         }
 
         return n;
     }
 
-    public static void printSomething(){
+    static void printFirstPhrase(){
         System.out.print("Enter a number:");
     }
 
-    public static void printResult(int n, int sum){
+    static void printResult(int n, int sum){
         System.out.printf("The sum of all even Fibonacci numbers less than or equal to %d is equal to: %d", n, sum);
     }
 }
